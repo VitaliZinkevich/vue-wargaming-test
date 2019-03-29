@@ -1,7 +1,7 @@
 <template>
-    <div >
-
-    </div>
+    <th >
+        <td v-for="header in headers"> {{header}}</td>
+    </th>
 </template>
 
 <script>
@@ -19,24 +19,20 @@ export default {
         "total",
         "card_type",
         "card_number",
-        "order_country",
-        "order_ip"
+        "location",
+
         ]
     }
   },
-  components:{'add-button': AddButoon},
+  components:{},
   methods: {
-    addToDoButtonClick: function (){
-       
-       console.log(this.newToDo)
-       this.$emit('readyToAdd', this.newToDo)
-       this.newToDo=''
+
        
     },
 
-  },
+  }
   
-}
+
 </script>
 
 <style scoped>
