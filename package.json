@@ -22,7 +22,8 @@
   },
   "dependencies": {
     "element-ui": "^2.7.0",
-    "vue": "^2.0.1"
+    "vue": "^2.0.1",
+    "vue-resource": "^1.5.1"
   },
   "devDependencies": {
     "babel-core": "^6.0.0",

@@ -1,10 +1,11 @@
 <template>
+<div>
+    <Currency/>
     <el-table
             :data="tableData"
             style="width: 100%"
             :border="true"
             :stripe="true"
-
 
     >
 
@@ -81,11 +82,15 @@
         </el-table-column>
 
     </el-table>
+
+</div>
 </template>
 
 <script>
 import data from '../data/orders.json'
 import UserInfo from './UserInfo.vue'
+//import Statistics from './Statistics.vue'
+import Currency from './Currency.vue'
 
 export default {
   name: 'app-table',
@@ -95,7 +100,11 @@ export default {
     }
   },
   components:{
-      'user-info': UserInfo
+      'user-info': UserInfo,
+
+      Currency,
+
+
 
   },
   method:{
@@ -109,7 +118,7 @@ export default {
           // DD/MM/YYYY hh:mm:ss
           let date = new Date(value*1000);
 
-          var hours = date.getHours();
+          var hours = '0'+date.getHours();
           var minutes = "0" + date.getMinutes();
           var seconds = "0" + date.getSeconds();
 
@@ -117,7 +126,7 @@ export default {
           var month = "0" + (date.getMonth()+1);
           var year = date.getFullYear()
 
-          var formatedStamp = dateN.substr(-2)+'/'+month.substr(-2)+'/'+year+' '+hours + ':' + minutes.substr(-2) + ':' + seconds.substr(-2);
+          var formatedStamp = dateN.substr(-2)+'/'+month.substr(-2)+'/'+year+' '+hours.substr(-2) + ':' + minutes.substr(-2) + ':' + seconds.substr(-2);
 
           return formatedStamp
       }
